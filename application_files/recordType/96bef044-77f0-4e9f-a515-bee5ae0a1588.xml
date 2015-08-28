@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<recordTypeHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <recordType name="TEST Record" a:uuid="96bef044-77f0-4e9f-a515-bee5ae0a1588">
+        <a:pluralName>TEST Record</a:pluralName>
+        <a:description></a:description>
+        <a:urlStub>KqBpsw</a:urlStub>
+        <a:source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="a:DataStoreEntity" a:uuid="503d61f1-f44c-4f41-95ff-b00fc665a553@_a-0000db64-d317-8000-0315-010000010000_2029"/>
+        <a:listViewTemplateExpr>=&quot;hello&quot;</a:listViewTemplateExpr>
+        <a:detailViewCfg>
+            <a:nameExpr>=&quot;Summary&quot;</a:nameExpr>
+            <a:uiExpr>=#&quot;d6a0ccac-8601-4d2d-91e3-368ada057b74&quot;()</a:uiExpr>
+            <a:visibilityExpr>=true()</a:visibilityExpr>
+            <a:urlStub>summary</a:urlStub>
+            <a:headerExpr></a:headerExpr>
+        </a:detailViewCfg>
+        <a:defaultSortInfo>
+            <field>=&quot;hello&quot;</field>
+            <ascending>true</ascending>
+        </a:defaultSortInfo>
+        <a:isSystem>false</a:isSystem>
+        <a:dataSrcExpr></a:dataSrcExpr>
+        <a:facetsListExpr></a:facetsListExpr>
+        <a:defaultFiltersExpr></a:defaultFiltersExpr>
+        <a:security>16383</a:security>
+    </recordType>
+    <roleMap/>
+</recordTypeHaul>

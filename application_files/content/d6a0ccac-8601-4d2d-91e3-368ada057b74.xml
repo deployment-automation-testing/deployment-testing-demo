@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>TEST_dashboard</name>
+        <uuid>d6a0ccac-8601-4d2d-91e3-368ada057b74</uuid>
+        <description></description>
+        <parentUuid>_a-0000db64-d317-8000-0315-010000010000_2020</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=#&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+  firstColumnContents: {
+    #&quot;SYSTEM_SYSRULES_milestoneField&quot;(
+      labelPosition: &quot;COLLAPSED&quot;,
+      steps: {&quot;Requested&quot;, &quot;Approved&quot;, &quot;Submitted to Vendor&quot;, &quot;Received&quot;},
+      active: 3
+    ),
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      firstColumnContents: {
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;PR #&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;123456789&quot;,
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_pickerFieldUsers&quot;(
+          label: &quot;Requested By&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: loggedInUser(),
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;Department&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;Sales&quot;,
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_dateField&quot;(
+          label: &quot;Due Date&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: today(),
+          readOnly: true
+        )
+      },
+      secondColumnContents: {
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;Shipping Address&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;123 Sesame Street&quot;,
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;City&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;New York&quot;,
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;State/Province&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;NY&quot;,
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;Zip/Postal Code&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;12345&quot;,
+          readOnly: true
+        )
+      }
+    ),
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      label: &quot;Items&quot;,
+      firstColumnContents: {
+        /* This grid is not configured to page or sort */
+        #&quot;SYSTEM_SYSRULES_gridField&quot;(
+          labelPosition: &quot;ABOVE&quot;,
+          totalCount: 5,
+          columns: {
+            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Description&quot;, data: {&quot;Mobile device for demos&quot;, &quot;Video software upgrade&quot;, &quot;Device accessories&quot;}),
+            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Category&quot;, data: {&quot;Hardware&quot;, &quot;Software&quot;, &quot;Miscellaneous&quot;}),
+            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Qty&quot;, data: {2, 1, 2}, alignment: &quot;RIGHT&quot;),
+            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Unit Price&quot;, data: {dollar({150, 50.99, 30.99}), &quot;Total&quot;}, alignment: &quot;RIGHT&quot;),
+            #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(label: &quot;Amount&quot;, data: dollar({300, 50.99, 61.98, 412.97}), alignment: &quot;RIGHT&quot;)
+          },
+          value: #&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex: 1, batchSize: 5),
+          saveInto: {}
+        )
+      },
+      secondColumnContents: {}
+    ),
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      label: &quot;Approval&quot;,
+      firstColumnContents: {
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;Approved By&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;Paul Smith&quot;,
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_dateField&quot;(
+          label: &quot;Approved On&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: today(),
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_paragraphField&quot;(
+          label: &quot;Comments&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;These items are necessary for an upcoming client demo and there is sufficient budget to cover the cost of the items.&quot;,
+          readOnly: true
+        )
+      },
+      secondColumnContents: {
+        #&quot;SYSTEM_SYSRULES_imageField&quot;(
+          labelPosition: &quot;COLLAPSED&quot;,
+          images: {
+            #&quot;SYSTEM_SYSRULES_documentImage&quot;(
+              document: #&quot;SYSTEM_SYSRULES_expd_exampleSignatureImage&quot;(),
+              altText: &quot;Paul Smith signature&quot;,
+              /* This is an example image that should not be used outside of this template. Instead, use a constant or variable that references your image. */
+              caption: &quot;Paul Smith&quot;
+            )
+          },
+          size: &quot;STANDARD&quot;
+        )
+      }
+    ),
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      label: &quot;Vendor Information&quot;,
+      firstColumnContents: {
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;Vendor&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;Mobile Device Company&quot;,
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;Contact&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;John Coleman&quot;,
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;Phone&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;(123) 456-7890&quot;,
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;Email&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;companyA@example.com&quot;,
+          readOnly: true
+        )
+      },
+      secondColumnContents: {
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;Address&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;456 Sesame Street&quot;,
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;City&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;New York&quot;,
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;State/Province&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;NY&quot;,
+          readOnly: true
+        ),
+        #&quot;SYSTEM_SYSRULES_textField&quot;(
+          label: &quot;Zip/Postal Code&quot;,
+          labelPosition: &quot;ADJACENT&quot;,
+          value: &quot;12345&quot;,
+          readOnly: true
+        )
+      }
+    )
+  },
+  secondColumnContents: {}
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>Administrator</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>
