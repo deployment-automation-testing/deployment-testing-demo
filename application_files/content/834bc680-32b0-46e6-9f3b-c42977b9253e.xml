@@ -14,7 +14,7 @@
             <system>false</system>
             <unlogged>false</unlogged>
         </visibility>
-        <definition>=&quot;Change rule to show update in production&quot;</definition>
+        <definition>=&quot;Testing a patch export&quot;</definition>
         <preferredEditor>legacy</preferredEditor>
         <offlineEnabled>false</offlineEnabled>
     </rule>
